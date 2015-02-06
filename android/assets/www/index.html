@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+	<title>Taringa! Musica</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+	<script type="text/javascript" src="cordova-2.5.0.js"></script>
+	<!-- script type="text/javascript" src="urucas.plugins.js"></script-->
+	<!-- script type="text/javascript" src="childbrowser.js"></script-->
+	<script type="text/javascript" src="lib/common/jquery-1.7.1.min.js"></script>
+
+	<script type="text/javascript" src="statusbarnotification.js"></script>
+	
+
+	<script type="text/javascript" src="lib/common/ajax.js"></script>
+	<script type="text/javascript" src="lib/common/utils.js"></script>
+
+	<script type="text/javascript" src="lib/app.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+          
+</head>
+<body onload="onLoad()">
+
+<div id="splash">
+	<img src="img/splashscreen.png" />
+</div>
+
+<div id="wrapper" style="display:none;">
+	<div id="header">
+		<img class="logo" src="img/musica.png" />
+		<div class="search_form">
+			<input type="text" id="q" />
+			<input type="hidden" value="" id="page" />
+		</div>
+	</div>
+
+	<div id="main_container">
+
+		<div id="track_container" class="container"></div>
+
+		<div id="playlist_container" class="container">
+			<h2>&nbsp;Lista de reproducci&oacute;n</h2>
+			<ul id="list"></ul>
+		</div>
+		
+		<div id="search_container" class="container">
+			<h2>&nbsp;Resultados de la b&uacute;squeda</h2>
+			<ul id="search-list"></ul>
+		</div>
+		
+		<div id="album_container" class="container">
+			<img src="" id="album-cover" />
+			<p id="album-title">Titulo del album</p>
+			<p id="album-user">@username</p>
+			<div style="clear:both;"></div>
+			<ul id="album-track-list"></ul>
+		</div>
+
+	</div>
+
+	<div id="player">
+		<div class="buttons">
+			<div class="spinner" style="display:none;">
+				<img src="img/spinner2.gif" />
+			</div>
+			<div id="playBtt" class="button play"></div>
+			<div class="button prev" onclick="app.prev();"></div>
+			<div class="button next" onclick="app.next();"></div>
+			<div id="repeatBtt" class="button repeat" onclick="app.repeat(this)"></div>
+			<div class="button shuffle" style="visibility:hidden"></div>
+			<div class="separator"></div>
+			<div class="plist" onclick="app.showPlaylist();"></div>
+		</div>
+		<div style="clear:both"></div>
+		<div class="nowplaying">
+			<img id="nowplaying-cover" src="" />
+			<div id="nowplaying-time"  class="time"><span class="position">00:00</span> / <span class="total">00:00</span></div>
+			<div id="nowplaying-title" class="title">----</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
